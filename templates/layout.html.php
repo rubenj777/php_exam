@@ -15,7 +15,7 @@
     <nav class="navbar nav-expand-lg navbar-light bg-dark mb-5 justify-content-between">
         <a href="/phpExam" class="navbar-brand ms-5" id="logo">Vélo 2000</a>
         <div>
-            <a href="?type=velo&action=new" class="me-2 btn btn-success">Créer un vélo</a>
+            <a href="?type=velo&action=new" class="me-5 btn btn-success">Créer un vélo</a>
         </div>
     </nav>
 

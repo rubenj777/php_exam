@@ -78,18 +78,16 @@ class Avis extends AbstractModel
 
     /**
      * update un avis dans la bdd
-     * @param string $author
-     * @param string $content
-     * @param int $id
+     * @param Avis $avis
      * @return void
      */
-    public function update(string $author, string $content, int $id)
+    public function update($avis)
     {
         $sql = $this->pdo->prepare("UPDATE {$this->tableName} SET author = :author, content = :content WHERE id = :id");
         $sql->execute([
-            'author' => $author,
-            'content' => $content,
-            'id' => $id,
+            'author' => $avis->author,
+            'content' => $avis->content,
+            'id' => $avis->getVeloId(),
         ]);
     }
 }

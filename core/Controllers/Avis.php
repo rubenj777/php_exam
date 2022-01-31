@@ -77,6 +77,7 @@ class Avis extends AbstractController
      * récupère l'id de l'avis pour retrouver le bon avis
      * récupère les données du formulaire puis fait appel à la fonction update() qui enregistre l'avis modifié dans la bdd
      * je ne parviens pas à récupérer l'id du vélo dans le redirect
+     * @return Response
      */
     public function edit()
     {
@@ -106,11 +107,13 @@ class Avis extends AbstractController
             $content = htmlspecialchars($_POST['content']);
         }
 
-
-
         if ($author && $content && $idToEdit) {
+            $avis = new \Models\Avis();
+            $avis->setAuthor($author);
+            $avis->setContent($content);
+            $avis->getVeloId();
 
-            $this->defaultModel->update($author, $content, $idToEdit);
+            $this->defaultModel->update($avis);
 
             return $this->redirect([
                 'type' => 'velo',
