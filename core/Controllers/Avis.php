@@ -106,10 +106,6 @@ class Avis extends AbstractController
             $content = htmlspecialchars($_POST['content']);
         }
 
-        // ici je récupère bien l'id du vélo
-        // l'erreur me précise que l'id est null alors que le print_r affiche bien le bon id
-        $idVelo = $avis->getVeloId();
-        print_r($idVelo);
 
 
         if ($author && $content && $idToEdit) {
